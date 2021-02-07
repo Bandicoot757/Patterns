@@ -9,12 +9,14 @@
 import UIKit
 
 class LoginViewController: UIViewController, UIScrollViewDelegate {
+    
+    var delegate: LoginViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
         self.view.backgroundColor = .white
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -109,13 +111,20 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
     }()
     
     @objc func loginButtonTapped() {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let destenationVC = sb.instantiateViewController(withIdentifier: "ProfileVC")
-        self.show(destenationVC, sender: self)
+        
+        //Здесь ведь допустим forced unwrapping?
+        if (delegate?.сheckLogin(login: loginTextField.text!))! && delegate?.checkPassword(password: passwordTextField.text!) == true {
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let destenationVC = sb.instantiateViewController(withIdentifier: "ProfileVC")
+            self.show(destenationVC, sender: self)
+        } else {
+            //тут можно будет вывестью вьюху о неверном логине или пароле
+            print("Error")
+        }
     }
     
     override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+        
         setSubviews()
         
         NSLayoutConstraint.activate([
