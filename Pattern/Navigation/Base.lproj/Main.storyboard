@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VVa-ty-c3K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VVa-ty-c3K">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -64,40 +64,8 @@
                     <view key="view" contentMode="scaleToFill" id="hnQ-fB-PJI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IU4-hu-6sp">
-                                <rect key="frame" x="32" y="413" width="350" height="70"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uj-DZ-gir">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="30"/>
-                                        <color key="backgroundColor" red="0.99169094680000003" green="1" blue="0.86791353989999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Open post"/>
-                                        <connections>
-                                            <segue destination="Gpo-I4-SnC" kind="show" id="4Av-G9-w8Y"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Im9-mf-5eV">
-                                        <rect key="frame" x="0.0" y="40" width="350" height="30"/>
-                                        <color key="backgroundColor" red="0.99169094680000003" green="1" blue="0.86791353989999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Open post"/>
-                                        <connections>
-                                            <segue destination="Gpo-I4-SnC" kind="show" id="2Fa-Wx-7eh"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="fRe-PP-tGM"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="rDk-lR-Mb7"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
-                        <constraints>
-                            <constraint firstItem="rDk-lR-Mb7" firstAttribute="trailing" secondItem="IU4-hu-6sp" secondAttribute="trailing" constant="32" id="EnO-nS-ltb"/>
-                            <constraint firstItem="IU4-hu-6sp" firstAttribute="centerX" secondItem="hnQ-fB-PJI" secondAttribute="centerX" id="HzZ-Hv-hQQ"/>
-                            <constraint firstItem="IU4-hu-6sp" firstAttribute="leading" secondItem="rDk-lR-Mb7" secondAttribute="leading" constant="32" id="rd0-5O-gAX"/>
-                            <constraint firstItem="IU4-hu-6sp" firstAttribute="centerY" secondItem="hnQ-fB-PJI" secondAttribute="centerY" id="tqS-q9-uVY"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Feed" id="CTA-33-ygc"/>
                 </viewController>
@@ -108,7 +76,7 @@
         <!--Post-->
         <scene sceneID="9oM-mS-hYy">
             <objects>
-                <viewController id="Gpo-I4-SnC" customClass="PostViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="PostVC" storyboardIdentifier="PostVC" id="Gpo-I4-SnC" customClass="PostViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NJr-hs-eEz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -193,9 +161,6 @@
             <point key="canvasLocation" x="-142.02898550724638" y="196.875"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="4Av-G9-w8Y"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
