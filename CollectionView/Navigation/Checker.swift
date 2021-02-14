@@ -9,11 +9,18 @@
 import UIKit
 
 class Checker: NSObject {
-    static let checker: Checker = Checker()
     
-    let login = "admin"
-    let password = "admin"
-
+    static let checker: Checker = Checker(login: "admin", password: "admin")
+    
+    var login: String?
+    var password: String?
+    
+    private init(login: String, password: String) {
+        super.init()
+        self.login = login
+        self.password = password
+    }
+    
 }
 
 class Authorizer: LoginViewControllerDelegate {

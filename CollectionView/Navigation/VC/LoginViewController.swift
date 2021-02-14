@@ -70,7 +70,6 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
         textField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.layer.borderWidth = 0.5
-//        textField.layer.cornerRadius = 10
         textField.autocapitalizationType = .none
         textField.placeholder = "Email or phone"
         textField.tintColor = UIColor(named: "VKcolor")
@@ -112,11 +111,26 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
     
     @objc func loginButtonTapped() {
         
-        //Здесь ведь допустим forced unwrapping?
-        if (delegate?.сheckLogin(login: loginTextField.text!))! && delegate?.checkPassword(password: passwordTextField.text!) == true {
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            let destenationVC = sb.instantiateViewController(withIdentifier: "ProfileVC")
-            self.show(destenationVC, sender: self)
+        
+        guard let loginText = loginTextField.text else {
+            return
+        }
+        
+        guard let passwordText = passwordTextField.text else {
+            return
+        }
+        
+        guard let login = delegate?.сheckLogin(login: loginText) else {
+            return
+        }
+        
+        guard let password = delegate?.checkPassword(password: passwordText) else {
+            return
+        }
+        
+        if login && password == true {
+            let profileViewController = storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileViewController
+            self.navigationController?.pushViewController(profileViewController, animated: true)
         } else {
             //тут можно будет вывестью вьюху о неверном логине или пароле
             print("Error")
