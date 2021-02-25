@@ -10,24 +10,23 @@ import UIKit
 
 class FeedViewController: UIViewController {
     
-    var output: FeedViewOutput?
+    private var output: FeedViewOutput
+    private let presenter: PostPresenter
     
-    init(output: FeedViewOutput) {
-            self.output = output
-            super.init(nibName:nil, bundle:.main)
-        }
+    init(output: FeedViewOutput, pr: PostPresenter) {
+        self.output = output
+        self.presenter = pr
+        super.init(nibName:nil, bundle:.main)
+    }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        output?.navigationController = self.navigationController
-    
-        let presenter = PostPresenter()
-        presenter.navigationController = self.navigationController
+        output.navigationController = self.navigationController
         
         view.addSubview(customView)
         
@@ -43,7 +42,7 @@ class FeedViewController: UIViewController {
         let view: ContainerView = ContainerView()
         view.toAutoLayout()
         view.onTap = {
-            self.output?.showPost()
+            self.output.showPost()
         }
         return view
     }()
