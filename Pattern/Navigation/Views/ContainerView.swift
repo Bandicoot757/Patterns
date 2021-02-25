@@ -48,7 +48,7 @@ class ContainerView: UIView {
     }
     
     @objc private func openPostButtonTapped() {
-        onTap!()
+        onTap?()
     }
     
 }

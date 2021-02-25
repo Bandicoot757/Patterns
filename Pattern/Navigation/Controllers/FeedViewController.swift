@@ -11,20 +11,20 @@ import UIKit
 class FeedViewController: UIViewController {
     
     private var output: FeedViewOutput
-    private let presenter: PostPresenter
     
-    init(output: FeedViewOutput, pr: PostPresenter) {
+    init(output: FeedViewOutput) {
         self.output = output
-        self.presenter = pr
-        super.init(nibName:nil, bundle:.main)
+        super.init(nibName: nil, bundle:.main)
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        self.output = PostPresenter()
+        super.init(nibName: nil, bundle: .main)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemGreen
         
         output.navigationController = self.navigationController
         
