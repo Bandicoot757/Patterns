@@ -10,35 +10,41 @@ import UIKit
 
 class Checker: NSObject {
     
-    static let checker: Checker = Checker(login: "admin", password: "admin")
+    static let shared: Checker = Checker()
     
-    var login: String?
-    var password: String?
+    private let login = "admin"
+    private let password = "admin"
     
-    private init(login: String, password: String) {
+    private override init() {
         super.init()
-        self.login = login
-        self.password = password
+    }
+    
+    func checkCredentials(login: String, password: String) -> Bool {
+        if login == self.login && password == self.password {
+            return true
+        } else {
+            return false
+        }
     }
     
 }
 
 class Authorizer: LoginViewControllerDelegate {
     
-    func сheckLogin(login: String) -> Bool {
-        if login == Checker.checker.login {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    func checkPassword(password: String) -> Bool {
-        if password == Checker.checker.password {
-            return true
-        } else {
-            return false
-        }
-    }
+//    func сheckLogin(login: String) -> Bool {
+//        if login == Checker.shared.login {
+//            return true
+//        } else {
+//            return false
+//        }
+//    }
+//
+//    func checkPassword(password: String) -> Bool {
+//        if password == Checker.shared.password {
+//            return true
+//        } else {
+//            return false
+//        }
+//    }
     
 }
