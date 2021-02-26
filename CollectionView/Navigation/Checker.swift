@@ -19,32 +19,31 @@ class Checker: NSObject {
         super.init()
     }
     
-    func checkCredentials(login: String, password: String) -> Bool {
-        if login == self.login && password == self.password {
+    func checkCredentials(value: String) -> String {
+        if value == "login" {
+            return login
+        } else if value == "password" {
+            return password
+        }
+        return ""
+    }
+}
+
+class Authorizer: LoginViewControllerDelegate {
+    
+    func сheckLogin(login: String) -> Bool {
+        if login == Checker.shared.checkCredentials(value: "login") {
             return true
         } else {
             return false
         }
     }
     
-}
-
-class Authorizer: LoginViewControllerDelegate {
-    
-//    func сheckLogin(login: String) -> Bool {
-//        if login == Checker.shared.login {
-//            return true
-//        } else {
-//            return false
-//        }
-//    }
-//
-//    func checkPassword(password: String) -> Bool {
-//        if password == Checker.shared.password {
-//            return true
-//        } else {
-//            return false
-//        }
-//    }
-    
+    func checkPassword(password: String) -> Bool {
+        if password == Checker.shared.checkCredentials(value: "password") {
+            return true
+        } else {
+            return false
+        }
+    }
 }
