@@ -8,6 +8,13 @@
 
 import UIKit
 
+protocol FeedViewOutput {
+    
+    var navigationController: UINavigationController? { get set }
+    func showPost()
+    
+}
+
 extension UIImage {
     func alpha(_ value:CGFloat) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, scale)

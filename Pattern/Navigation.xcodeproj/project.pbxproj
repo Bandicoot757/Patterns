@@ -16,12 +16,14 @@
 		060782C6250CEB0A00A87020 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782C5250CEB0A00A87020 /* InfoViewController.swift */; };
 		060782C8250CEE5D00A87020 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782C7250CEE5D00A87020 /* PostViewController.swift */; };
 		060782CA250CEE7200A87020 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782C9250CEE7200A87020 /* Post.swift */; };
+		36146A6825C89E2D00175AE5 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36146A6725C89E2D00175AE5 /* ContainerView.swift */; };
 		365C37EB251F5F95002FB751 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365C37EA251F5F95002FB751 /* ProfileHeaderView.swift */; };
 		365C37ED251F6009002FB751 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365C37EC251F6009002FB751 /* ProfileViewController.swift */; };
 		366F3BDA2535847F00FAE88A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F3BD92535847F00FAE88A /* Helper.swift */; };
 		3676B4472532F9EA002156EC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676B4462532F9EA002156EC /* LoginViewController.swift */; };
 		369162522534106000B65B33 /* Publications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369162512534106000B65B33 /* Publications.swift */; };
 		36916255253416E000B65B33 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36916254253416E000B65B33 /* PostTableViewCell.swift */; };
+		36A56CF425C973D9002B696A /* PostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A56CF325C973D9002B696A /* PostPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +38,14 @@
 		060782C5250CEB0A00A87020 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		060782C7250CEE5D00A87020 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		060782C9250CEE7200A87020 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		36146A6725C89E2D00175AE5 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		365C37EA251F5F95002FB751 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		365C37EC251F6009002FB751 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		366F3BD92535847F00FAE88A /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		3676B4462532F9EA002156EC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		369162512534106000B65B33 /* Publications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publications.swift; sourceTree = "<group>"; };
 		36916254253416E000B65B33 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		36A56CF325C973D9002B696A /* PostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,31 +79,40 @@
 			isa = PBXGroup;
 			children = (
 				369162502534102600B65B33 /* Storage */,
-				365C37E9251F5EF9002FB751 /* Profile */,
-				3676B4462532F9EA002156EC /* LoginViewController.swift */,
+				365C37E9251F5EF9002FB751 /* Controllers */,
+				36146A6625C89DED00175AE5 /* Views */,
 				366F3BD6253581F300FAE88A /* Cells */,
 				366F3BD82535844900FAE88A /* Helpers */,
 				060782B1250CE27700A87020 /* AppDelegate.swift */,
 				060782B3250CE27700A87020 /* SceneDelegate.swift */,
-				060782B5250CE27700A87020 /* FeedViewController.swift */,
 				060782B7250CE27700A87020 /* Main.storyboard */,
 				060782BA250CE27A00A87020 /* Assets.xcassets */,
 				060782BC250CE27A00A87020 /* LaunchScreen.storyboard */,
 				060782BF250CE27A00A87020 /* Info.plist */,
-				060782C5250CEB0A00A87020 /* InfoViewController.swift */,
-				060782C7250CEE5D00A87020 /* PostViewController.swift */,
 				060782C9250CEE7200A87020 /* Post.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		365C37E9251F5EF9002FB751 /* Profile */ = {
+		36146A6625C89DED00175AE5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				36146A6725C89E2D00175AE5 /* ContainerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		365C37E9251F5EF9002FB751 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3676B4462532F9EA002156EC /* LoginViewController.swift */,
 				365C37EC251F6009002FB751 /* ProfileViewController.swift */,
 				365C37EA251F5F95002FB751 /* ProfileHeaderView.swift */,
+				060782B5250CE27700A87020 /* FeedViewController.swift */,
+				060782C7250CEE5D00A87020 /* PostViewController.swift */,
+				060782C5250CEB0A00A87020 /* InfoViewController.swift */,
 			);
-			path = Profile;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		366F3BD6253581F300FAE88A /* Cells */ = {
@@ -114,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				366F3BD92535847F00FAE88A /* Helper.swift */,
+				36A56CF325C973D9002B696A /* PostPresenter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -203,10 +217,12 @@
 				060782B2250CE27700A87020 /* AppDelegate.swift in Sources */,
 				060782C6250CEB0A00A87020 /* InfoViewController.swift in Sources */,
 				060782CA250CEE7200A87020 /* Post.swift in Sources */,
+				36A56CF425C973D9002B696A /* PostPresenter.swift in Sources */,
 				365C37EB251F5F95002FB751 /* ProfileHeaderView.swift in Sources */,
 				369162522534106000B65B33 /* Publications.swift in Sources */,
 				060782B4250CE27700A87020 /* SceneDelegate.swift in Sources */,
 				365C37ED251F6009002FB751 /* ProfileViewController.swift in Sources */,
+				36146A6825C89E2D00175AE5 /* ContainerView.swift in Sources */,
 				060782C8250CEE5D00A87020 /* PostViewController.swift in Sources */,
 				366F3BDA2535847F00FAE88A /* Helper.swift in Sources */,
 			);
